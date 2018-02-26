@@ -1,0 +1,6 @@
+{
+    "Jwt": {
+        "Key": "MyVeryAwesomeSecureKey4711",
+        "Issuer": "http://tokenservice:5000/"
+    }
+}

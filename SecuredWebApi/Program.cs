@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace SecuredWebApi
 {
@@ -12,8 +13,8 @@ namespace SecuredWebApi
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .UseUrls("http://+:5001")
-                .Build();
+                   .ConfigureAppConfiguration(builder => builder.AddJsonFile("/run/secrets/jwt-config"))
+                   .UseStartup<Startup>()
+                   .Build();
     }
 }
