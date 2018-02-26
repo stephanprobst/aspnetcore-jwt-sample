@@ -2,8 +2,10 @@
 
 Prerequisites:
 
-    1. Docker
-    2. Swarm
+* Docker
+* Swarm
+
+## Setup
 
 Create secret:
 
@@ -22,3 +24,37 @@ Deploy the stack:
 ```bash
 docker stack deploy -c docker-compose.yml token
 ```
+
+## Usage
+
+Call
+
+```
+POST http://localhost:5000/api/token
+{
+    "username" : "mickey",
+    "password" : "mouse"
+}
+```
+
+To get the token:
+
+```
+{
+    "token": "<JWT-TOKEN>"
+}
+```
+
+Add the token as ```Bearer Authorization header```
+
+```
+Authorization: Bearer <JWT-TOKEN>
+```
+
+To get:
+
+```
+GET http://localhost:5001/api/cars/
+```
+
+Play around
