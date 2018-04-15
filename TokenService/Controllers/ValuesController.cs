@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TokenService.Controllers
 {
+    [ApiController]
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {

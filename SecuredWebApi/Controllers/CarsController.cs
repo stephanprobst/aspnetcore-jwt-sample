@@ -4,7 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SecuredWebApi.Controllers
 {
-    [Route("api/[controller]"), Authorize]
+    [ApiController]
+    [Authorize]
+    [Route("api/[controller]")]
     public class CarsController : Controller
     {
         // GET api/values

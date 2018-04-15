@@ -10,6 +10,7 @@ using TokenService.Models;
 
 namespace TokenService
 {
+    [ApiController]
     [Route("api/[controller]")]
     public partial class TokenController : Controller
     {
@@ -22,26 +23,20 @@ namespace TokenService
 
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult CreateToken([FromBody]LoginModel login)
+        public ActionResult<TokenModel> CreateToken(LoginModel login)
         {
-            if (!ModelState.IsValid)
-            {
-                return Unauthorized();
-            }
-
-            IActionResult response = Unauthorized();
             var user = Authenticate(login);
 
             if (user != null)
             {
                 var tokenString = BuildToken(user);
-                response = Ok(new
+                return Ok(new TokenModel
                 {
-                    token = tokenString
+                    Token = tokenString
                 });
             }
 
-            return response;
+            return Unauthorized();
         }
 
         private string BuildToken(UserModel user)
