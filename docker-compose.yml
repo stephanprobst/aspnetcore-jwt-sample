@@ -21,4 +21,4 @@ services:
 
 secrets:
   jwt-config:
-    external: true
+    file: ./jwt-config.json

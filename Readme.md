@@ -7,12 +7,6 @@ Prerequisites:
 
 ## Setup
 
-Create secret:
-
-```bash
-docker secret create jwt-config jwt-config.json
-```
-
 To build all container images:
 
 ```bash

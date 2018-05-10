@@ -4,7 +4,7 @@ WORKDIR /build
 COPY ./*.csproj .
 RUN dotnet restore
 COPY . .
-RUN dotnet publish -o /publish
+RUN dotnet publish -o /publish -c Release
 
 FROM microsoft/dotnet:2.1-aspnetcore-runtime-alpine
 WORKDIR /app

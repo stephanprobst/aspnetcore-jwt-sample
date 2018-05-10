@@ -12,7 +12,7 @@ namespace TokenService
 {
     [ApiController]
     [Route("api/[controller]")]
-    public partial class TokenController : Controller
+    public partial class TokenController : ControllerBase
     {
         private IConfiguration _config;
 

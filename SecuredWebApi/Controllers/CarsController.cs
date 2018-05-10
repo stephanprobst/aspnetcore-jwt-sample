@@ -7,7 +7,7 @@ namespace SecuredWebApi.Controllers
     [ApiController]
     [Authorize]
     [Route("api/[controller]")]
-    public class CarsController : Controller
+    public class CarsController : ControllerBase
     {
         // GET api/values
         [HttpGet]
